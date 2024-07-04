@@ -5,88 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <style>
+        header {
+            color: white;
+            padding: 30px;
+            background-image: url('../HTML/img/데카포호수.jpg');
+            background-size: 100% 100%;
+        }
+        nav {
+            float: left;
+            background: lightpink;
+            color: darkred;
+            width: 15%;
+            padding: 5px;
+            height: 800px;
+        }
+        article {
+            background: rgb(189, 255, 244);
+            height: 800px;
+            padding: 5px;
+            back
+        }
         label, input, select, th, td { padding: 5px; }
         table {
             margin-left: auto;
             margin-right: auto;
         }
+        h1, h2, td, tr, input { text-align: center; }
+        p { text-align: right; }
+        .left {
+            background: green;
+            opacity: 0.7;
+            color: black;
+        }
+        .right {
+            background: greenyellow;
+            opacity: 0.8;
+        }
+        .button { 
+            padding: 5px 15px; background: rgb(66, 62, 50); color:white;
+        }
+        .button:hover {
+            background: black;
+            color: white;
+        }
+        .button:active {
+            background: rebeccapurple;
+            color: pink;
+        }
+        
     </style>
 </head>
 <body style="margin: 40px;">
-    <h1 style="text-align: center;">회원 가입</h1>
-    <hr>
-    <p style="text-align:right; color:red">(*)표시는 필수 항목입니다.</p>
-    <form action="#0703#" method="post">
-    <table border="5" style="width: 60%; ">
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="uid"><b>사용자 ID(*)</b></label></td>
-            <td style="text-align: center;">
-                <input type="text" name="uid" id="uid" size="20" placeholder="ID를 입력하세요" required>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="pwd"><b>패스워드(*)</b></label></td>
-            <td style="text-align: center;">
-                <input type="password"  name="pwd" id="pwd" size="20" placeholder="패스워드를 입력하세요" required>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="pwd2"><b>패스워드 확인(*)</b></label></td>
-            <td style="text-align: center;">
-                <input type="password"  name="pwd2" id="pwd2" size="20" placeholder="패스워드를 다시 입력하세요" required>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="uname"><b>이름(*)</b></label>
-            </td>
-            <td style="text-align: center;">
-                <input type="text" name="uname" id="uname" placeholder="이름을 입력하세요" required>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="radio"><b>성별(*)</b></label>
-            </td>
-            <td style="text-align: center;">
-                <label for="radio">남</label>
-                <input type="radio" name="sex" id="man" value="man" required>
-                <label for="radio">여</label>
-                <input type="radio" name="sex" id="woman" value="woman" required>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="email"><b>이메일(*)</b></label>
-            </td>
-            <td style="text-align: center;">
-                <input type="email" id="email" size="30" placeholder="이메일을 입력하세요" required>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="tel"><b>전화번호</b></label>
-            </td>
-            <td style="text-align: center;">
-                <input type="tel" id="tel" placeholder="010-0000-0000">
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center; background-color: lightgray;">
-                <label for="intro"><b>자기 소개</b></label>
-            </td>
-            <td style="text-align: center;">
-                <textarea name="intro" id="intro" rows="10" cols="60" style="resize: none;"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center;" colspan="2">
-                <input type="submit" value="제출">
-                <input type="reset" value="취소">
-            </td>
-        </tr>
+    <header><h1>조승현의 테스트 페이지</h1></header>
+    <section>
+        <nav>
+            <ul>
+                <a href="../HTML/99.회원가입.html">
+                    <h3>회원가입</h3>
+                </a><br>
+                <a href="_blank">
+                    <h3>회원정보수정</h3>
+                </a><br>
+                <a href="_blank">
+                    <h3>회원탈퇴</h3>
+                </a>
+            </ul>
+        </nav>
+        <article>
+            <h2>회원 가입</h2>
+            <p style="text-align:right; color:red"><b>(*)표시는 필수 항목입니다.</b></p>
+            <form action="#0703#" method="post">
+            <table border="8" style="width: 60%; ">
+                <tr>
+                    <td class="left">
+                        <label for="uid"><b>사용자 ID(*)</b></label></td>
+                    <td class="right">
+                        <input type="text" name="uid" id="uid" size="50%" placeholder="ID를 입력하세요" required autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="pwd"><b>패스워드(*)</b></label></td>
+                    <td class="right">
+                        <input type="password"  name="pwd" id="pwd" size="50%" placeholder="패스워드를 입력하세요" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="pwd2"><b>패스워드 확인(*)</b></label></td>
+                    <td class="right">
+                        <input type="password"  name="pwd2" id="pwd2" size="50%" placeholder="패스워드를 다시 입력하세요" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="uname"><b>이름(*)</b></label>
+                    </td>
+                    <td class="right">
+                        <input type="text" name="uname" id="uname" placeholder="이름을 입력하세요"
+                        size="50%" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="radio"><b>성별(*)</b></label>
+                    </td>
+                    <td class="right">
+                        <label for="radio"><b>남</b></label>
+                        <input type="radio" name="sex" id="man" value="man" required checked>
+                        <label for="radio"><b>여</b></label>
+                        <input type="radio" name="sex" id="woman" value="woman" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="email"><b>이메일(*)</b></label>
+                    </td>
+                    <td class="right">
+                        <input type="email" id="email" size="50%" placeholder="이메일을 입력하세요" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="tel"><b>전화번호</b></label>
+                    </td>
+                    <td class="right">
+                        <input type="tel" id="tel" placeholder="010-0000-0000" size="50%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="intro"><b>자기 소개</b></label>
+                    </td>
+                    <td class="right">
+                        <textarea name="intro" id="intro" rows="10" cols="60" style="resize: none;">  
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="right">
+                        <b>
+                            <input class="button" type="submit" value="제출">
+                            <input class="button" type="reset" value="취소">
+                        </b>
+                    </td>
+                </tr>
+        </article>
+    </section>
 </body>
 </html>
