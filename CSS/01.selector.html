@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selector</title>
+    <style>
+        * { font-family: monospace; }
+        p, h1, h2 { text-align: center; color:red; }
+        #para1 { text-align: center; color:blue; }
+        .center { text-align: center; color:green; }
+        div > p { text-align: center; color:brown}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h1>
+        red and center-aligned heading
+    </h1>
+    <p>Red and center-aligned paragraph</p>
+    <p class="center">Red and center-aligned paragraph</p>
+    <h1>Red and center-aligned paragraph</h1>
+    <h2>Red and center-aligned paragraph</h2>
+    <div>
+        <p>Brown and center-aligned paragranph</p>
+    </div>
+</body>
+</html>
