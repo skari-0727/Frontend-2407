@@ -1,8 +1,14 @@
 header {
-  background-color: rgba(238, 255, 0, 0.5);
+  background-image: url('../intro/introimg/titlesea.jpg');
+  background-size: 100% 100%;
   text-align: center;
   vertical-align: middle;
   padding: 20px;
+  
+}
+
+header h1 {
+  font-size:xxx-large
 }
 
 nav {
@@ -10,7 +16,7 @@ nav {
   width: 20%;
   height: 800px;
   padding: 20px;
-  background-color: rgba(118, 197, 0, 0.5);
+  background-color: lightgray;
 }
 
 nav ol {
@@ -19,14 +25,58 @@ nav ol {
 
 article {
   float: left;
-  width: 70%;
+  width: 80%;
   height: 800px;
   padding: 20px;
-  background-color: rgba(255, 115, 0, 0.5);
 }
+
+article h2{
+  text-align: center;
+}
+
+
 
 section::after {
   content: "";
   display: table;
   clear: both;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: rgb(68, 43, 14);
+}
+
+a:hover {
+  color: blue; 
+}
+
+a:active {
+  color: green;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+  @media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+  }
+
+article span.mainintro {
+  font-size: x-large;
+}
+
+article h2 {
+  font-size: xx-large;
 }
