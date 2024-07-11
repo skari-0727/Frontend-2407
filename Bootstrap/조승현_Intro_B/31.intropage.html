@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap 5 Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/020855b5c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        font-family: "Jua", sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      input.imp {
+        vertical-align: baseline;
+      }
+      body {
+        margin-bottom: 60px;
+      }
+      .iframe-container {
+        height: calc(100vh - 140px);
+        padding-bottom: 80px;
+      }
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.forEach(function (link) {
+              link.classList.remove("active");
+            });
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body style="width: 100%; height: 90%">
+    <nav class="navbar navbar-expand-sm bg-danger navbar-dark fixed-top">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <a class="navbar-brand mx-2" href="#"
+            ><img src="img/logo_s2_db.png" alt="로고" style="width: 45px"
+          /></a>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="main.html" target="main"
+              ><i class="fa-solid fa-house-chimney"></i> Main</a
+            >
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="33.hometown.html" target="main"
+              ><i class="fa-solid fa-house-chimney"></i> Hometown</a
+            >
+          </li>
+          <li class="nav-item dropdown ms-3">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              <i class="fa-solid fa-brain"></i> Space</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="34_1.Space1.html" target="main"
+                  >인상 깊었던 여행지</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="34_1.Space2.html" target="main"
+                  >가보고 싶은 여행지</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="35.food.html" target="main">
+              <i class="fa-solid fa-user-group"></i> Food</a
+            >
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="36.hobby.html" target="main">
+              <i class="fa-solid fa-user-group"></i> Hobby</a
+            >
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="32.schedule.html" target="main">
+              <i class="fa-regular fa-calendar-days"></i> Calendar</a
+            >
+          </li>
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link" href="38.admin.html" target="main">
+              <i class="fa-solid fa-key"></i> Admin</a
+            >
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="37.login.html" target="main">
+              <i class="fa-solid fa-right-from-bracket"></i> Logout</a
+            >
+          </li>
+        </ul>
+
+        <span class="navbar-text me-3">Human님 환영합니다.</span>
+      </div>
+    </nav>
+    <div class="container" style="margin-top: 80px">
+      <div class="row">
+        <div class="col-3" style="font-size: 0.9rem">
+          <img
+            src="img/me1.webp"
+            alt="프로필"
+            class="rounded-circle"
+            style="width: 80%"
+          />
+          <div class="mt-2">
+            <span>오늘의 상태 메세지를 이 자리에 적습니다.</span>
+            <a href="#"><span class="badge bg-secondary">수정</span></a>
+          </div>
+          <div class="mt-5">
+            <i class="fa-solid fa-envelope"></i> rusiarrok@naver.com <br />
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/skari-0727" target="_blank"> Github </a>
+            <br />
+            <i class="fa-brands fa-square-instagram"></i>
+            <a
+              href="https://www.instagram.com/skari_picture?igsh=MmtlcTUyZmV1emV3"
+            >
+              Instagram</a
+            >
+            <br />
+            <i class="fa-solid fa-location-dot"></i> 수원시 팔달구
+            <a
+              href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EB%82%A0%EC%94%A8"
+              target="_blank"
+              ><span class="badge bg-secondary">날씨</span></a
+            >
+            <br />
+            <div>
+              <button type="button" class="btn btn-sm btn-outline-primary mt-2">
+                Edit Profile
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Main 영역: 페이지마다 이 부분만 채워줌 -->
+        <div class="col-9 iframe-container">
+          <iframe
+            name="main"
+            src="main.html"
+            width="100%"
+            height="100%"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-light fixed-bottom">
+      <div class="container-fluid justify-content-center">
+        <span class="navbar-text">
+          Copyright &copy; 2021-2024 CK World Corp. All right reserved.
+        </span>
+      </div>
+    </nav>
+  </body>
+</html>
