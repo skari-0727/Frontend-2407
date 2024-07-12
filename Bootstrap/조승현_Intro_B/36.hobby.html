@@ -23,9 +23,125 @@
       * {
         font-family: "Jua", sans-serif;
       }
+      .carousel-inner {
+        width: 100%;
+        min-height: 400px;
+      }
+      .carousel-item {
+        height: 400px;
+      }
+      .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+      }
+      .my_bg {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .my_bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("img/bgimg.jpg") no-repeat center center/cover;
+        opacity: 0.5;
+        z-index: -1;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        color: black;
+        text-align: center;
+        padding-top: 5px;
+      }
     </style>
   </head>
   <body>
-    <h2 style="text-align: center">여기는 취미 페이지입니다.</h2>
+    <div class="my_bg">
+      <h2 style="text-align: center">Favorite Food</h2>
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#demo"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#demo"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#demo"
+            data-bs-slide-to="2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#demo"
+            data-bs-slide-to="3"
+          ></button>
+        </div>
+
+        <div class="carousel-inner bg-secondary center-block">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <img src="img/baseball.jpg" alt="ball" class="d-block" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="img/lake2.jpg" alt="lake2" class="d-block" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="img/lake.jpg" alt="lake" class="d-block" />
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <img src="img/melast.jpg" alt="me" class="d-block" />
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#demo"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <div class="container-fluid mt-3" style="text-align: center">
+        <span style="text-decoration: solid" class="h4">
+          <dl>
+            전 취미가 상당히 다양합니다.<br />
+            대표적으로만 말씀드리면, 야구를 상당히 좋아하여 직접 경기관람하는
+            것도 좋아합니다.<br />
+            응원하는 팀은 LG TWINS입니다.<br />
+            또한, 지금은 잠시 휴식중이나 한때 해수어항을 운영하며 구경하는것도
+            좋아했어요.<br />
+            전체를 아울러, 사진 촬영하는 것도 즐겨요!<br />
+            제가 찍은 사진을 구경해주세요~!
+          </dl>
+        </span>
+      </div>
+    </div>
   </body>
 </html>
