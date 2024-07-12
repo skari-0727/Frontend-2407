@@ -28,7 +28,7 @@
   <body>
     <h2 style="text-align: center">Login Page</h2>
     <div class="container mt-3">
-      <form action="/action_page.php">
+      <form action="31.mainsub.html">
         <div class="mb-3 mt-3">
           <div class="row">
             <div class="col-3">
@@ -41,6 +41,7 @@
                 id="uid"
                 placeholder="ID를 입력해주세요."
                 name="uid"
+                required
               />
             </div>
           </div>
@@ -57,6 +58,7 @@
                 id="pwd"
                 placeholder="비밀번호를 입력해주세요."
                 name="pswd"
+                required
               />
             </div>
           </div>
@@ -72,11 +74,7 @@
           </div>
           <div class="row">
             <div class="col" style="text-align: center;">
-              <button
-                onclick="location.href='31.mainsub.html';"
-                type="button"
-                class="btn btn-primary"
-              >
+              <button type="submit" class="btn btn-primary">
                 로그인
               </button>
               <button type="reset" class="btn btn-secondary">취소</button>
