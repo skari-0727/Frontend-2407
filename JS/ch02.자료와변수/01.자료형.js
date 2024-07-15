@@ -23,4 +23,30 @@ console.log(hello, hello[2], hello[4]); // 안녕하세요? 하 요
 // 문자열: 속성(attribute), method
 console.log(hello.length, hello.charAt(2), hello.charAt(4));
 
-let a = 'this is "string"';
+// template literal
+console.log(hello + " 문자열의 길이는 " + hello.length + "입니다.");
+console.log(`${hello} 문자열의 길이는 ${hello.length}입니다.`);
+
+// 2. 숫자(Number)
+// 자바스크립트에서는 정수형(integer), 실수형(floating point)을 구분하지 않는다.
+let a = 3,
+  b = 4;
+console.log(a + b, a - b, a * b, a / b, b % a);
+let pi = 0.314159e1; // 0.314159 X 10 ** 1
+let f = 1.3e-8; // 1.3 X 10 ** -8
+console.log(pi, f);
+console.log(2 ** 10, 2 ** 20, 2 ** 30); // 1K, 1M, 1G
+
+// 3. 논리형(Boolean) - true, false
+// 비교 연산
+console.log(a > b, 10 === 10.0); // === : 타입과 값이 같을 때 참
+console.log(10 == "10", 10 === "10"); // true, false
+// 논리 연산
+let x = 10;
+console.log(x > 8 || x < 0); // ||는 or
+console.log(x > 0 && x < 8); // &&는 and
+
+// 자료형 검사
+console.log(typeof hello, typeof a, typeof true); // string, number, boolean
+
+let y = a + -b; // + : binary operator, - : unary operator
