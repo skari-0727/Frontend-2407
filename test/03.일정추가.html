@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>일정 추가</title>
+  </head>
+  <body>
+    <div
+      class="container mt-5"
+      style="
+        max-width: 500px;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+      "
+    >
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 style="margin: 0">일정 추가</h4>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          style="
+            border: none;
+            background: transparent;
+            font-size: 1.5rem;
+            cursor: pointer;
+          "
+        >
+          X
+        </button>
+      </div>
+      <hr />
+      <form action="/schedule" method="get">
+        <div class="mb-3">
+          <label
+            for="title"
+            class="form-label"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            일정명
+            <span>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="importance"
+              /><span class="ms-2">중요</span>
+            </span>
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            required
+          />
+        </div>
+        <div class="row mb-3">
+          <div class="col-7">
+            <label for="sdate" class="form-label">시작일</label>
+            <input
+              type="date"
+              class="form-control"
+              name="sdate"
+              id="sdate"
+              value="2024-07-11"
+              required
+            />
+          </div>
+          <div class="col-5">
+            <label for="stime" class="form-label">시작시간</label>
+            <input
+              type="time"
+              class="form-control"
+              name="stime"
+              id="stime"
+              value="14:00"
+              required
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-7">
+            <label for="edate" class="form-label">종료일</label>
+            <input
+              type="date"
+              class="form-control"
+              name="edate"
+              id="edate"
+              value="2024-07-11"
+            />
+          </div>
+          <div class="col-5">
+            <label for="etime" class="form-label">종료시간</label>
+            <input
+              type="time"
+              class="form-control"
+              name="etime"
+              id="etime"
+              value="14:00"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="place" class="form-label">장소</label>
+          <input
+            type="text"
+            class="form-control"
+            name="place"
+            id="place"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="memo" class="form-label">메모</label>
+          <input type="text" class="form-control" name="memo" id="memo" />
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary me-2">제출</button>
+          &nbsp;&nbsp;
+          <button type="reset" class="btn btn-secondary">종료</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
