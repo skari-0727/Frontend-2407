@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나이 계산</title>
+    <style>
+      input,
+      button {
+        padding: 5px;
+      }
+      table {
+        border: 2px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      tr,
+      td {
+        text-align: center;
+      }
+      td {
+        width: 300px;
+        height: 30px;
+      }
+      select {
+        width: 30%;
+      }
+      select option {
+        text-align: center;
+      }
+      span,
+      div {
+        display: inline;
+      }
+    </style>
+    <script>
+      function calculateAge() {
+        const today = new Date();
+        const tYear = today.getFullYear();
+        const tMonth = today.getMonth() + 1;
+        const tDay = today.getDate();
+
+        const bYear = Number(document.getElementById("year").value);
+        const bMonth = Number(document.getElementById("month").value);
+        const bDay = Number(document.getElementById("date").value);
+
+        let age = 0;
+        if (tMonth < bMonth || (tMonth === bMonth && tDay < bDay)) {
+          age = tYear - bYear - 1;
+        } else {
+          age = tYear - bYear;
+        }
+
+        document.getElementById("result").innerHTML = `만 ${age}세 입니다.`;
+      }
+
+      function populateSelectOptions() {
+        const yearSelect = document.getElementById("year");
+        const monthSelect = document.getElementById("month");
+        const dateSelect = document.getElementById("date");
+
+        for (let i = 1900; i <= 2100; i++) {
+          const yearOption = document.createElement("option");
+          yearOption.value = i;
+          yearOption.text = i;
+          yearSelect.appendChild(yearOption);
+        }
+
+        for (let i = 1; i <= 12; i++) {
+          const monthOption = document.createElement("option");
+          monthOption.value = i;
+          monthOption.text = i;
+          monthSelect.appendChild(monthOption);
+        }
+
+        for (let i = 1; i <= 31; i++) {
+          const dateOption = document.createElement("option");
+          dateOption.value = i;
+          dateOption.text = i;
+          dateSelect.appendChild(dateOption);
+        }
+      }
+
+      window.onload = populateSelectOptions;
+    </script>
+  </head>
+  <body style="margin: 40px">
+    <h2 style="text-align: center">나이 계산기</h2>
+    <hr />
+    <table border="solid">
+      <tr>
+        <td><label for="year">태어난 년도를 입력해주세요.</label></td>
+        <td>
+          <select id="year"></select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="month">태어난 월을 골라주세요.</label></td>
+        <td>
+          <select id="month"></select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="date">태어난 날짜를 골라주세요.</label></td>
+        <td>
+          <select id="date"></select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button onclick="calculateAge()" style="font-size: medium">
+            나이 계산
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <span>오늘 기준 당신의 나이는 </span>
+          <div id="result"></div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
