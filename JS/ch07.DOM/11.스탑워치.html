@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <script>
+      let timer;
+      let milliseconds = 0;
+      let isRunning = false;
+
+      function twoDigit(num) {
+        return num < 10 ? "0" + num : String(num);
+      }
+
+      function threeDigit(num) {
+        if (num < 10) return "00" + num;
+        else if (num < 100) return "0" + num;
+        else return String(num);
+      }
+
+      function updateTime() {
+        const mins = Math.floor((milliseconds % 3600000) / 60000);
+        0;
+        const secs = Math.floor((milliseconds % 60000) / 1000);
+        const msecs = Math.floor((milliseconds % 1000) / 16.666666);
+        document.getElementById("time").textContent = `${twoDigit(
+          mins
+        )}:${twoDigit(secs)}:${twoDigit(msecs)}
+        `;
+      }
+
+      function start() {
+        if (!isRunning) {
+          isRunning = true;
+          timer = setInterval(() => {
+            milliseconds += 10;
+            updateTime();
+          }, 10);
+        }
+      }
+
+      function stop() {
+        isRunning = false;
+        clearInterval(timer);
+      }
+
+      function reset() {
+        isRunning = false;
+        clearInterval(timer);
+        milliseconds = 0;
+        updateTime();
+      }
+    </script>
+  </head>
+  <body style="margin: 40px">
+    <h1 id="time" style="font-size: 1.5rem">00:00:00</h1>
+    <button onclick="start()">시작</button>
+    <button onclick="stop()">정지</button>
+    <button onclick="reset()">리셋</button>
+  </body>
+</html>
