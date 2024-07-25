@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      img {
+        width: 100px;
+      }
+      button {
+        padding: 5px;
+        margin: 5px;
+        font-size: 1.5rem;
+      }
+    </style>
+    <script>
+      function twoDigit(num) {
+        return num < 10 ? "0" + num : String(num);
+      }
+      function displayTime(num) {
+        let minute = parseInt(num / 60000);
+        let second = parseInt(num / 1000) % 60;
+        let millisecond = parseInt(num / 10) % 100;
+        return (
+          twoDigit(minute) +
+          ":" +
+          twoDigit(second) +
+          ":" +
+          twoDigit(millisecond)
+        );
+      }
+      $(document).ready(() => {
+        let count = 0;
+        let startTime = null;
+        let si = null;
+        $("#start").click(() => {
+          if (!si) {
+            startTime = Date.now() - count;
+            si = setInterval(() => {
+              count = Date.now() - startTime;
+              $("#display").text(displayTime(count));
+            }, 10);
+          }
+        });
+        $("#stop").click(() => {
+          clearInterval(si);
+          si = null;
+        });
+        $("#reset").click(() => {
+          count = 0;
+          $("#display").text("00:00:00");
+          clearInterval(si);
+          si = null;
+        });
+      });
+    </script>
+  </head>
+  <body style="margin: 40px">
+    <h1 id="display" style="font-size: 2rem">00:00:00</h1>
+    <button id="start">시작</button>
+    <button id="stop">정지</button>
+    <button id="reset">리셋</button>
+  </body>
+</html>
